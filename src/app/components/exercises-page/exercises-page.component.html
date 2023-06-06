@@ -1,9 +1,8 @@
-<h1>Exercises List</h1>
-<div *ngIf="exercises.length > 0">
-    <ul *ngFor="let exercise of exercises">
-        <!-- <li><a [routerLink]="['/exercises', exercise.id]">
-            {{ exercise.name }}
-          </a></li> -->
-        <app-exercise-item [exercise]="exercise"></app-exercise-item>
-    </ul>
+<div class="container mt-5">
+    <h1 class="mb-5">Exercises List</h1>
+    <div *ngIf="exercises.length > 0" class="d-flex">
+        <ul *ngFor="let exercise of exercises">
+            <app-exercise-item [exercise]="exercise"></app-exercise-item>
+        </ul>
+    </div>
 </div>
