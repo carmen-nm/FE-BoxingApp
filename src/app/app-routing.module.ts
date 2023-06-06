@@ -5,6 +5,7 @@ import { ExercisesPageComponent } from './components/exercises-page/exercises-pa
 import { ExerciseDetailsComponent } from './components/exercise-details/exercise-details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { EditExerciseComponent } from './components/edit-exercise/edit-exercise.component';
+import { NewExerciseComponent } from './components/new-exercise/new-exercise.component';
 
 const routes: Routes = [
 
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path:"exercises/:id/edit",
     component: EditExerciseComponent
+  },
+  {
+    path:"exercises/post/exercise",
+    component: NewExerciseComponent
   }
 ]
 

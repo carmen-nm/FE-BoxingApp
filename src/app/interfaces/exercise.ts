@@ -4,5 +4,4 @@ export interface Exercise {
     "img": string,
     "sets": number,
     "repetitions": number,
-
 }

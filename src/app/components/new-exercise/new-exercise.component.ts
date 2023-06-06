@@ -4,24 +4,21 @@ import { Boxing1Service } from 'src/app/services/boxing1.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exercise } from 'src/app/interfaces/exercise';
 
-
 @Component({
-  selector: 'app-edit-exercise',
-  templateUrl: './edit-exercise.component.html',
-  styleUrls: ['./edit-exercise.component.css']
+  selector: 'app-new-exercise',
+  templateUrl: './new-exercise.component.html',
+  styleUrls: ['./new-exercise.component.css']
 })
-export class EditExerciseComponent implements OnInit {
+export class NewExerciseComponent implements OnInit{
   exercise!: Exercise;
 
-  editExerciseForm: FormGroup;
+  newExerciseForm: FormGroup;
 
   nameInput: FormControl;
   setsInput: FormControl;
   repetitionsInput: FormControl;
   imgInput: FormControl;
 
-
-  // myName!: string;
 
   constructor(private boxing1:Boxing1Service, private activatedRoute: ActivatedRoute, private router: Router) {  
     
@@ -39,7 +36,7 @@ export class EditExerciseComponent implements OnInit {
       Validators.required,
     ]);
 
-    this.editExerciseForm = new FormGroup({
+    this.newExerciseForm = new FormGroup({
 
       name: this.nameInput,
       sets: this.setsInput,
@@ -50,22 +47,22 @@ export class EditExerciseComponent implements OnInit {
   }
 
   ngOnInit(): void {
-      const id = this.activatedRoute.snapshot.params["id"];    
-      this.boxing1.getExercise(id).subscribe({
-        next: (data) =>{
-          this.exercise = data;
+  //     const id = this.activatedRoute.snapshot.params["id"];    
+  //     this.boxing1.getExercise(id).subscribe({
+  //       next: (data) =>{
+  //         this.exercise = data;
 
-          this.editExerciseForm.get('name')?.setValue(this.exercise.name);        
-          this.editExerciseForm.get('sets')?.setValue(this.exercise.sets);        
-          this.editExerciseForm.get('repetitions')?.setValue(this.exercise.repetitions);        
-          this.editExerciseForm.get('img')?.setValue(this.exercise.img);        
-        }
-      })
+  //         this.newExerciseForm.get('name')?.setValue(this.exercise.name);        
+  //         this.newExerciseForm.get('sets')?.setValue(this.exercise.sets);        
+  //         this.newExerciseForm.get('repetitions')?.setValue(this.exercise.repetitions);        
+  //         this.newExerciseForm.get('img')?.setValue(this.exercise.img);        
+  //       }
+  //     })
   }
 
   onSubmit(): void {
     const id = this.activatedRoute.snapshot.params["id"];    
-    this.boxing1.putExercise(id, this.editExerciseForm.value).subscribe(
+    this.boxing1.postExercise(this.newExerciseForm.value).subscribe(
       {
         next:(data) =>{          
           window.history.back();

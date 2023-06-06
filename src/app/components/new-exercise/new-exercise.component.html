@@ -1,5 +1,5 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="editExerciseForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="newExerciseForm">
 
         <div>
             <input type="text" placeholder="Name..." formControlName="name" />
@@ -19,13 +19,13 @@
                 Repetitions error.....
             </p>
         </div>
-        <div style="display: none;">
+        <div>
             <input type="text" placeholder="Image..." formControlName="img" />
             <p class="error-msg" *ngIf="imgInput.invalid && imgInput.touched">
                 Image error.....
             </p>
         </div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="editExerciseForm.invalid">Submit</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="newExerciseForm.invalid">Submit</button>
     </form>
 </div>

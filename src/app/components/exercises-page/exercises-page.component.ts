@@ -2,6 +2,8 @@ import { Component , OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import { Exercise } from 'src/app/interfaces/exercise';
 import { Boxing1Service } from 'src/app/services/boxing1.service';
+import { NewPostComponent } from '../new-post/new-post.component';
+import { ExerciseItemComponent } from '../exercise-item/exercise-item.component'
 
 @Component({
   selector: 'app-exercises-page',
