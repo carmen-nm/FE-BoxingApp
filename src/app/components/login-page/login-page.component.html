@@ -1,6 +1,7 @@
 <div class="container">
-    <h1>Login User</h1>
-    <form (ngSubmit)="onSubmit()" [formGroup]="checkUserForm">
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="checkUserForm" class="forms">
+        <h1>Login User</h1>
 
         <div>
             <input type="text" placeholder="Username..." formControlName="username" />
@@ -16,6 +17,6 @@
         </div>
 
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="checkUserForm.invalid">Submit</button>
+        <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="checkUserForm.invalid">Submit</button>
     </form>
 </div>

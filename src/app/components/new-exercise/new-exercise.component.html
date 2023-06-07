@@ -1,5 +1,7 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="newExerciseForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="newExerciseForm" class="forms">
+        <h1>Create exercise
+        </h1>
 
         <div>
             <input type="text" placeholder="Name..." formControlName="name" />
@@ -26,6 +28,6 @@
             </p>
         </div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="newExerciseForm.invalid">Submit</button>
+        <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="newExerciseForm.invalid">Submit</button>
     </form>
 </div>

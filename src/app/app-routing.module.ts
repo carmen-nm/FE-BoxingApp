@@ -11,6 +11,8 @@ import { LoginPageComponent } from './components/login-page/login-page.component
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { RoutineDetailsComponent } from './components/routine-details/routine-details.component';
+import { NewRoutineComponent } from './components/new-routine/new-routine.component';
+import { EditRoutineComponent } from './components/edit-routine/edit-routine.component';
 
 const routes: Routes = [
 
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path:"routines/:id",
     component: RoutineDetailsComponent
+  },
+  {
+    path:"routines/:id/edit",
+    component: EditRoutineComponent
+  },
+  {
+    path:"exercises/post/routine",
+    component: NewRoutineComponent
   },
   {
     path:"login",

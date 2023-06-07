@@ -58,7 +58,8 @@ export class NewUserComponent implements OnInit{
     this.boxingUser.postUser(this.newUserForm.value).subscribe(
       {
         next:(data) =>{          
-          window.history.back();
+          // window.history.back();
+          this.router.navigate(["/login"]);
         },
         error:(error) =>{
           console.log(error)

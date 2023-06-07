@@ -1,7 +1,8 @@
 <div class="container">
-    <h1>Create new User</h1>
 
-    <form (ngSubmit)="onSubmit()" [formGroup]="newUserForm">
+    <form (ngSubmit)="onSubmit()" [formGroup]="newUserForm" class="forms">
+        <h1>Create user
+        </h1>
 
         <div>
             <input type="text" placeholder="Username..." formControlName="username" />
@@ -17,6 +18,6 @@
         </div>
 
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="newUserForm.invalid">Submit</button>
+        <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="newUserForm.invalid">Submit</button>
     </form>
 </div>

@@ -1,0 +1,42 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()" [formGroup]="newRoutineForm" class="forms">
+        <h1>Modify exercise
+        </h1>
+
+        <div>
+            <input type="text" placeholder="Name..." formControlName="name" />
+            <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
+                Name error.....
+            </p>
+        </div>
+        <div>
+            <select formControlName="routineType" class="select-enum">
+                <option value="CARDIO">Cardio</option>
+                <option value="STRENGTH">Strength</option>
+            </select>
+            <p class="error-msg" *ngIf="routineTypeInput.invalid && routineTypeInput.touched">
+                Sets error.....
+            </p>
+        </div>
+        <div>
+            <input type="text" placeholder="Duration..." formControlName="duration" />
+            <p class="error-msg" *ngIf="durationInput.invalid && durationInput.touched">
+                Duration error.....
+            </p>
+        </div>
+        <div>
+            <input type="text" placeholder="Equipment..." formControlName="equipment" />
+            <p class="error-msg" *ngIf="equipmentInput.invalid && equipmentInput.touched">
+                Equipment error.....
+            </p>
+        </div>
+        <div>
+            <input type="text" placeholder="Image..." formControlName="img" />
+            <p class="error-msg" *ngIf="imgInput.invalid && imgInput.touched">
+                Image error.....
+            </p>
+        </div>
+
+        <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="newRoutineForm.invalid">Submit</button>
+    </form>
+</div>

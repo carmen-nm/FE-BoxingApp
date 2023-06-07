@@ -1,9 +1,9 @@
 <div class="container mt-5">
     <h1 class="mb-5">Exercises List</h1>
-    <div *ngIf="exercises.length > 0" class="d-flex">
+    <div *ngIf="exercises.length > 0" class="d-flex rowCards">
         <ul *ngFor="let exercise of exercises">
             <app-exercise-item [exercise]="exercise"></app-exercise-item>
         </ul>
     </div>
-    <app-new-post></app-new-post>
+    <app-new-post [formType]="'exercise'"></app-new-post>
 </div>

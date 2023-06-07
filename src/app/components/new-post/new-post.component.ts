@@ -8,9 +8,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./new-post.component.css']
 })
 export class NewPostComponent {
-
+  @Input('formType')
+  formType: string;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router){
-    
+    this.formType = "";
   }
 }

@@ -18,6 +18,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { RoutineItemComponent } from './components/routine-item/routine-item.component';
 import { RoutineDetailsComponent } from './components/routine-details/routine-details.component';
+import { NewRoutineComponent } from './components/new-routine/new-routine.component';
+import { EditRoutineComponent } from './components/edit-routine/edit-routine.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RoutineDetailsComponent } from './components/routine-details/routine-de
     UserProfileComponent,
     NewUserComponent,
     RoutineItemComponent,
-    RoutineDetailsComponent
+    RoutineDetailsComponent,
+    NewRoutineComponent,
+    EditRoutineComponent
   ],
   imports: [
     BrowserModule,

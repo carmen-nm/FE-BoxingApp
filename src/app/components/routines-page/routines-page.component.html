@@ -1,12 +1,12 @@
 <div class="container mt-5">
     <h1 class="mb-5">Routine List</h1>
-    <div *ngIf="routines.length > 0" class="d-flex">
+    <div *ngIf="routines.length > 0" class="d-flex rowCards">
         <ul *ngFor="let routine of routines">
             <app-routine-item [routine]="routine"></app-routine-item>
 
         </ul>
     </div>
-    <!-- <app-new-post></app-new-post> CAMBIAR PR OTRO PA ROUTINES-->
+    <app-new-post [formType]="'routine'"></app-new-post>
 
 
 </div>

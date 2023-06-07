@@ -10,5 +10,37 @@
     max-height: 650px;
     object-fit: cover;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.img-item {
+    height: 250px;
+    object-fit: cover;
+}
+
+.rowCards {
+    overflow-x: auto!important;
+}
+
+.forms {
+    gap: 1rem;
+    margin: 5rem;
+    /* justify-items: center;
+    margin: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-enum {
+    width: 200px;
+}

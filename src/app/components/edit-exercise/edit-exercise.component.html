@@ -1,6 +1,8 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit()" [formGroup]="editExerciseForm">
 
+    <form (ngSubmit)="onSubmit()" [formGroup]="editExerciseForm" class="forms">
+        <h1>Modify exercise
+        </h1>
         <div>
             <input type="text" placeholder="Name..." formControlName="name" />
             <p class="error-msg" *ngIf="nameInput.invalid && nameInput.touched">
@@ -26,6 +28,6 @@
             </p>
         </div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="editExerciseForm.invalid">Submit</button>
+        <button class="btn btn-primary" mat-raised-button color="primary" type="submit" [disabled]="editExerciseForm.invalid">Submit</button>
     </form>
 </div>
