@@ -16,7 +16,7 @@ export class ExercisesPageComponent implements OnInit{
   exercises: Exercise[];
 
   constructor(private boxing1:Boxing1Service){
-    this.exercises = this.boxing1.exercises;
+    this.exercises = this.boxing1.exercises; 
   }
 
 

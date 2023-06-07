@@ -1,47 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Boxing1Service } from 'src/app/services/boxing1.service';
+import { BoxingUserService } from 'src/app/services/boxing-user.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Exercise } from 'src/app/interfaces/exercise';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
-  selector: 'app-new-exercise',
-  templateUrl: './new-exercise.component.html',
-  styleUrls: ['./new-exercise.component.css']
+  selector: 'app-new-user',
+  templateUrl: './new-user.component.html',
+  styleUrls: ['./new-user.component.css']
 })
-export class NewExerciseComponent implements OnInit{
-  exercise!: Exercise; 
+export class NewUserComponent implements OnInit{
+  user!: User; 
 
-  newExerciseForm: FormGroup;
+  newUserForm: FormGroup;
 
-  nameInput: FormControl;
-  setsInput: FormControl;
-  repetitionsInput: FormControl;
-  imgInput: FormControl;
+  usernameInput: FormControl;
+  passwordInput: FormControl;
 
 
-  constructor(private boxing1:Boxing1Service, private activatedRoute: ActivatedRoute, private router: Router) {  
+  constructor(private boxingUser: BoxingUserService, private activatedRoute: ActivatedRoute, private router: Router) {  
     
     
-    this.nameInput = new FormControl('', [
+    this.usernameInput = new FormControl('', [
       Validators.required,
     ]);
-    this.setsInput = new FormControl('', [
+    this.passwordInput = new FormControl('', [
       Validators.required,
+      Validators.minLength(6)
     ]);
-    this.repetitionsInput = new FormControl('', [
-      Validators.required,
-    ]);
-    this.imgInput = new FormControl('', [ 
-      Validators.required,
-    ]);
+    
 
-    this.newExerciseForm = new FormGroup({
+    this.newUserForm = new FormGroup({
 
-      name: this.nameInput,
-      sets: this.setsInput,
-      repetitions: this.repetitionsInput,
-      img: this.imgInput
+      username: this.usernameInput,
+      password: this.passwordInput,
+
 
     });
   }
@@ -62,7 +55,7 @@ export class NewExerciseComponent implements OnInit{
 
   onSubmit(): void {
     const id = this.activatedRoute.snapshot.params["id"];    
-    this.boxing1.postExercise(this.newExerciseForm.value).subscribe(
+    this.boxingUser.postUser(this.newUserForm.value).subscribe(
       {
         next:(data) =>{          
           window.history.back();

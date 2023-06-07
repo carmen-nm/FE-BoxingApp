@@ -13,8 +13,17 @@
                     <li class="nav-item">
                         <a class="nav-link" routerLink="/exercises">Exercises</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">My rutines</a>
+                    <li class="nav-item" *ngIf="boxingUserService.userLoggedId">
+                        <a class="nav-link" [routerLink]="['/users', boxingUserService.userLoggedId]" tabindex="-1" aria-disabled="true">My profile</a>
+                    </li>
+                    <li class="nav-item" *ngIf="!boxingUserService.userLoggedId">
+                        <a class="nav-link" routerLink="/login" tabindex="-1" aria-disabled="true">Login</a>
+                    </li>
+                    <li class="nav-item" *ngIf="boxingUserService.userLoggedId">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true" (click)="logout()">Logout</a>
+                    </li>
+                    <li class="nav-item" *ngIf="!boxingUserService.userLoggedId">
+                        <a class="nav-link" routerLink="/post/user" tabindex="-1" aria-disabled="true">Sign up</a>
                     </li>
                 </ul>
             </div>

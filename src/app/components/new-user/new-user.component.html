@@ -1,0 +1,22 @@
+<div class="container">
+    <h1>Create new User</h1>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="newUserForm">
+
+        <div>
+            <input type="text" placeholder="Username..." formControlName="username" />
+            <p class="error-msg" *ngIf="usernameInput.invalid && usernameInput.touched">
+                Username error.....
+            </p>
+        </div>
+        <div>
+            <input type="text" placeholder="Password..." formControlName="password" />
+            <p class="error-msg" *ngIf="passwordInput.invalid && passwordInput.touched">
+                Password error.....
+            </p>
+        </div>
+
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="newUserForm.invalid">Submit</button>
+    </form>
+</div>

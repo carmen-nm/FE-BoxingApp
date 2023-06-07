@@ -13,8 +13,6 @@ export class ExerciseDetailsComponent implements OnInit{
 
     // variables
     exercise!: any;
-    img: string = "https://images.unsplash.com/photo-1514994667787-b48ca37155f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80"
-
     constructor(private boxing1:Boxing1Service, private activatedRoute: ActivatedRoute, private router: Router){
       
     }
@@ -58,7 +56,7 @@ export class ExerciseDetailsComponent implements OnInit{
     }
 
     deleteExercise(): void{
-      if(confirm("Do you want remove this exerxice?")){
+      if(confirm("Do you want remove this exercise?")){
 
         const id = this.activatedRoute.snapshot.params["id"];
         this.boxing1.deleteExercise(id).subscribe(
