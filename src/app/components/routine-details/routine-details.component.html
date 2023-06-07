@@ -1,16 +1,18 @@
 <section *ngIf="routine">
     <div class="container">
         <div class="card mb-3 mt-5">
-            <img [src]="routine.img" class="card-img-top card-detail" alt="...">
+            <img [src]="routine.img" class="card-img-top card-detail img-item" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{routine.name}}</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p class="card-text"><small class="text-muted">Type: {{routine.routineType}}, Duration: {{routine.duration}} min, Equipment: {{routine.equipment}}.</small></p>
 
+                <div class="d-flex rowCards mt-5 mb-5">
+                    <ul *ngFor="let exercise of routine.exercises">
+                        <app-exercise-item [exercise]="exercise"></app-exercise-item>
+                    </ul>
+                </div>
 
-                <ul *ngFor="let exercise of routine.exercises">
-                    <app-exercise-item [exercise]="exercise"></app-exercise-item>
-                </ul>
 
                 <a routerLink="/routines" class="btn btn-primary" (click)="this.goBack()">Back</a> &nbsp;
                 <button (click)="deleteRoutine()" class="btn btn-danger">Delete</button>
