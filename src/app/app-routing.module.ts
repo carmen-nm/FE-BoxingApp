@@ -13,6 +13,7 @@ import { NewUserComponent } from './components/new-user/new-user.component';
 import { RoutineDetailsComponent } from './components/routine-details/routine-details.component';
 import { NewRoutineComponent } from './components/new-routine/new-routine.component';
 import { EditRoutineComponent } from './components/edit-routine/edit-routine.component';
+import { RoutineExercisesComponent } from './components/routine-exercises/routine-exercises.component';
 
 const routes: Routes = [
 
@@ -45,7 +46,11 @@ const routes: Routes = [
     component: EditRoutineComponent
   },
   {
-    path:"exercises/post/routine",
+    path:"routines/:id/exercises",
+    component: RoutineExercisesComponent
+  },
+  {
+    path:"routines/post/routine",
     component: NewRoutineComponent
   },
   {
@@ -56,6 +61,7 @@ const routes: Routes = [
     path:"users/:id",
     component: UserProfileComponent
   },
+ 
   {
     path:"post/user",
     component: NewUserComponent

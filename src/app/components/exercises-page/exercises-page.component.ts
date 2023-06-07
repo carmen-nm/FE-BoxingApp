@@ -13,7 +13,7 @@ import { ExerciseItemComponent } from '../exercise-item/exercise-item.component'
 export class ExercisesPageComponent implements OnInit{
 
   // variables
-  exercises: Exercise[];
+  exercises: Exercise[]; 
 
   constructor(private boxing1:Boxing1Service){
     this.exercises = this.boxing1.exercises; 
@@ -25,8 +25,6 @@ export class ExercisesPageComponent implements OnInit{
   }
 
 
-  // request from component
-  // void porq no es inmediato
   getAllExercises(): void{
     this.boxing1.getAllExercises().subscribe(
       {

@@ -17,6 +17,7 @@
                 <a routerLink="/routines" class="btn btn-primary" (click)="this.goBack()">Back</a> &nbsp;
                 <button (click)="deleteRoutine()" class="btn btn-danger">Delete</button>
                 <a [routerLink]="['/routines/' + routine.id + '/edit']" class="btn btn-primary ms-3">Edit</a>
+                <a [routerLink]="['/routines/' + routine.id + '/exercises']" class="btn btn-primary ms-3">Update exercises</a>
 
             </div>
 
