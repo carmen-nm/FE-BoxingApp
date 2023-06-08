@@ -25,6 +25,7 @@ import { ExerciseToChooseComponent } from './components/exercise-to-choose/exerc
 import { HomeComponent } from './components/home/home.component';
 import { RoutineToChooseComponent } from './components/routine-to-choose/routine-to-choose.component';
 import { UserRoutinesComponent } from './components/user-routines/user-routines.component';
+import { ProfileCtaComponent } from './components/profile-cta/profile-cta.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { UserRoutinesComponent } from './components/user-routines/user-routines.
     ExerciseToChooseComponent,
     HomeComponent,
     RoutineToChooseComponent,
-    UserRoutinesComponent
+    UserRoutinesComponent,
+    ProfileCtaComponent
   ],
   imports: [
     BrowserModule,

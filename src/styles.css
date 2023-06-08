@@ -74,5 +74,13 @@ body {
 }
 
 .jumbo {
-    height: 500px;
+    height: 550px;
+    background-image: url(https://images.unsplash.com/photo-1633394782368-6e7260566004?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 15rem;
 }
