@@ -1,5 +1,6 @@
 <div class="container mt-5">
-    <h1 class="mb-5">'nombre de la rutina en variable' exercises</h1>
+    <h1 class="mb-5">Exercises available
+    </h1>
     <div *ngIf="exercises.length > 0" class="d-flex rowCards">
         <ul *ngFor="let exercise of exercises">
             <app-exercise-to-choose [exercise]="exercise"></app-exercise-to-choose>

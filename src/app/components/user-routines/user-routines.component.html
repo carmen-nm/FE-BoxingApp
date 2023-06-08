@@ -1,5 +1,5 @@
 <div class="container mt-5">
-    <h1 class="mb-5">Managing my routines</h1>
+    <h1 class="mb-5">Routines available</h1>
     <div *ngIf="routines.length > 0" class="d-flex rowCards">
         <ul *ngFor="let routine of routines">
             <app-routine-to-choose [routine]="routine"></app-routine-to-choose>

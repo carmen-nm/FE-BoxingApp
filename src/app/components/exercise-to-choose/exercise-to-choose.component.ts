@@ -3,6 +3,7 @@ import { Exercise } from 'src/app/interfaces/exercise';
 import {Input} from '@angular/core'
 import { BoxingRoutineService } from 'src/app/services/boxing-routine.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Routine } from 'src/app/interfaces/routine';
 
 @Component({
   selector: 'app-exercise-to-choose',
@@ -13,9 +14,31 @@ export class ExerciseToChooseComponent {
     // variables
     @Input() 
     exercise!: Exercise;
+    routine!: Routine
 
     constructor(private boxingRoutine:BoxingRoutineService, private activatedRoute: ActivatedRoute, private router: Router){
       // this.exercise = this.boxing1.;
+    }
+
+    getRoutine(): void{
+      let routineId = this.activatedRoute.snapshot.params["id"];   
+      this.boxingRoutine.getRoutine(routineId).subscribe({
+        next: (data) => {
+          this.routine = data;
+        }
+      });
+    }
+
+    ngOnInit(): void {     
+      this.getRoutine();
+    }
+    
+    exerciseInRoutine(exerciseId: any): Boolean{
+      let exist = false;
+    
+      const exerciseFound = this.routine.exercises.find(element => element.id == exerciseId);      
+    
+      return (exerciseFound !== undefined);
     }
 
     addExercise(exerciseId: any):void{             
@@ -35,7 +58,7 @@ export class ExerciseToChooseComponent {
           }
         }
       )
-      }
+      } 
     }
 
     deleteExercise(exerciseId: any):void{

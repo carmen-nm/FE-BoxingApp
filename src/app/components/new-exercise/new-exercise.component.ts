@@ -65,7 +65,8 @@ export class NewExerciseComponent implements OnInit{
     this.boxing1.postExercise(this.newExerciseForm.value).subscribe(
       {
         next:(data) =>{          
-          window.history.back();
+          // window.history.back();
+          this.router.navigate([`/exercises/${data.id}`]);
         },
         error:(error) =>{
           console.log(error)
