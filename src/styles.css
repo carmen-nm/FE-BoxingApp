@@ -84,3 +84,7 @@ body {
     color: white;
     padding-left: 15rem;
 }
+
+body {
+    padding-bottom: 20px;
+}
