@@ -4,7 +4,7 @@
         <h5 class="card-title">{{ routine.name }}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a [routerLink]="['/routines', routine.id]" class="btn btn-primary">More info</a>
-        <button (click)="addRoutine(routine.id)" class="btn btn-success ms-2">Add</button>
-        <button (click)="deleteRoutine(routine.id)" class="btn btn-danger ms-2">Delete</button>
+        <button *ngIf="!routineInUser(routine.id)" (click)="addRoutine(routine.id)" class="btn btn-success ms-2">Add</button>
+        <button *ngIf="routineInUser(routine.id)" (click)="deleteRoutine(routine.id)" class="btn btn-danger ms-2">Delete</button>
     </div>
 </div>

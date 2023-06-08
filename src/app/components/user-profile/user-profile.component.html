@@ -29,8 +29,8 @@
             </div>
             <h1 class="text-center justify-content-center mt-3">{{ user.username }}</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id nostrum quod asperiores quam earum quis aliquam enim sunt praesentium incidunt, excepturi, ipsum assumenda velit laboriosam, doloremque pariatur perspiciatis nulla maxime.</p>
-            <h3 class="mt-5">My routines</h3>
-
+            <!-- <h3 class="mt-5"> My routines</h3> -->
+            <a [routerLink]="['/users/' + user.id + '/routines']" class="btn btn-primary ms-3 mt-3">Update my routines</a>
 
 
 
@@ -45,7 +45,7 @@
         </div>
 
 
-        <a [routerLink]="['/users/' + user.id + '/routines']" class="btn btn-primary ms-3">Update routines</a>
+
 
 
     </div>

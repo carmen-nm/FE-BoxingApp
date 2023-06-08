@@ -61,7 +61,7 @@ export class NewRoutineComponent implements OnInit{
         {
           next:(data) =>{          
             // window.history.back();
-            this.router.navigate([`/routines/${id}`]);
+            this.router.navigate([`/routines/${data.id}`]);
           },
           error:(error) =>{
             console.log(error)
