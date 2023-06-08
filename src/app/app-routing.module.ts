@@ -14,9 +14,15 @@ import { RoutineDetailsComponent } from './components/routine-details/routine-de
 import { NewRoutineComponent } from './components/new-routine/new-routine.component';
 import { EditRoutineComponent } from './components/edit-routine/edit-routine.component';
 import { RoutineExercisesComponent } from './components/routine-exercises/routine-exercises.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserRoutinesComponent } from './components/user-routines/user-routines.component';
 
 const routes: Routes = [
 
+  {
+    path:"",
+    component: HomeComponent
+  },
   {
     path:"exercises",
     component: ExercisesPageComponent
@@ -61,7 +67,10 @@ const routes: Routes = [
     path:"users/:id",
     component: UserProfileComponent
   },
- 
+  {
+    path:"users/:id/routines",
+    component: UserRoutinesComponent
+  }, 
   {
     path:"post/user",
     component: NewUserComponent

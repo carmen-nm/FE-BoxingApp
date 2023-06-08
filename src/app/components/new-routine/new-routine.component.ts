@@ -60,12 +60,13 @@ export class NewRoutineComponent implements OnInit{
       this.boxingRoutine.postRoutine(this.newRoutineForm.value).subscribe(
         {
           next:(data) =>{          
-            window.history.back();
+            // window.history.back();
+            this.router.navigate([`/routines/${id}`]);
           },
           error:(error) =>{
             console.log(error)
             // this.goBack(); 
-          }
+          } 
         }
       )
     }

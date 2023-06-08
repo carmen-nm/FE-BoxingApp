@@ -4,7 +4,7 @@
         <h5 class="card-title">{{ exercise.name }}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a [routerLink]="['/exercises', exercise.id]" class="btn btn-primary">More info</a>
-        <button (click)="addExercise(exercise.id)" class="btn btn-success">Add</button>
-        <button (click)="deleteExercise(exercise.id)" class="btn btn-danger">Delete</button>
+        <button (click)="addExercise(exercise.id)" class="btn btn-success ms-2">Add</button>
+        <button (click)="deleteExercise(exercise.id)" class="btn btn-danger ms-2">Delete</button>
     </div>
 </div>

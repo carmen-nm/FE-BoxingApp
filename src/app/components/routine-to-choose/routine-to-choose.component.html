@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;">
+    <img [src]="routine.img" class="card-img-top img-item" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{ routine.name }}</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a [routerLink]="['/routines', routine.id]" class="btn btn-primary">More info</a>
+        <button (click)="addRoutine(routine.id)" class="btn btn-success ms-2">Add</button>
+        <button (click)="deleteRoutine(routine.id)" class="btn btn-danger ms-2">Delete</button>
+    </div>
+</div>

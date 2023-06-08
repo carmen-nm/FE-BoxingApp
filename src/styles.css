@@ -66,3 +66,13 @@ body {
     max-width: 500px;
     text-align: center;
 }
+
+.img-home {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.jumbo {
+    height: 500px;
+}

@@ -22,6 +22,9 @@ import { NewRoutineComponent } from './components/new-routine/new-routine.compon
 import { EditRoutineComponent } from './components/edit-routine/edit-routine.component';
 import { RoutineExercisesComponent } from './components/routine-exercises/routine-exercises.component';
 import { ExerciseToChooseComponent } from './components/exercise-to-choose/exercise-to-choose.component';
+import { HomeComponent } from './components/home/home.component';
+import { RoutineToChooseComponent } from './components/routine-to-choose/routine-to-choose.component';
+import { UserRoutinesComponent } from './components/user-routines/user-routines.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { ExerciseToChooseComponent } from './components/exercise-to-choose/exerc
     NewRoutineComponent,
     EditRoutineComponent,
     RoutineExercisesComponent,
-    ExerciseToChooseComponent
+    ExerciseToChooseComponent,
+    HomeComponent,
+    RoutineToChooseComponent,
+    UserRoutinesComponent
   ],
   imports: [
     BrowserModule,

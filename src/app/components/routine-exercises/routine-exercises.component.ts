@@ -20,7 +20,7 @@ constructor(private boxing1:Boxing1Service){
 
 ngOnInit(): void {
   this.getAllExercises();
-}
+} 
 
 getAllExercises(): void{
   this.boxing1.getAllExercises().subscribe(
@@ -30,7 +30,7 @@ getAllExercises(): void{
         this.exercises = data;
       },
       error:(error) =>{
-        console.log(error)
+        console.log(error) 
       }
     }
   )

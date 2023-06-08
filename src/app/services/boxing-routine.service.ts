@@ -33,4 +33,13 @@ export class BoxingRoutineService {
   deleteRoutine(id: number): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/routines/${id}`)
   }
+
+  addRoutineExercises(id: number, exerciseId: number): Observable<any> {
+    return this.http.patch<any>(`${this.API_URL}/routines/${id}/${exerciseId}`, null)
+  }
+
+  deleteRoutineExercises(id: number, exerciseId: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/routines/${id}/${exerciseId}`)
+  }
+  
 }

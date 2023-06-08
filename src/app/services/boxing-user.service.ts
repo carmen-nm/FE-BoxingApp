@@ -39,4 +39,12 @@ export class BoxingUserService {
   LoginUser(body: any): Observable<any>{
     return this.http.patch<any>(`${this.API_URL}/users/login`, body)
   }
+
+  addUserRoutines(id: number, routineId: number): Observable<any> {
+    return this.http.patch<any>(`${this.API_URL}/users/${id}/${routineId}`, null)
+  }
+
+  deleteUserRoutines(id: number, routineId: number): Observable<any> {
+    return this.http.delete<any>(`${this.API_URL}/users/${id}/${routineId}`)
+  }
 }

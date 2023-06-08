@@ -34,19 +34,18 @@
 
 
 
-            <!-- <div *ngIf="routines.length > 0" class="d-flex rowCards">
-                <ul *ngFor="let routine of routines">
-                    <app-routine-item [routine]="routine"></app-routine-item>
-        
-                </ul>
-            </div> -->
-
-
 
 
         </div>
 
+        <div class="d-flex rowCards mt-5 mb-5">
+            <ul *ngFor="let routine of user.routines">
+                <app-routine-item [routine]="routine"></app-routine-item>
+            </ul>
+        </div>
 
+
+        <a [routerLink]="['/users/' + user.id + '/routines']" class="btn btn-primary ms-3">Update routines</a>
 
 
     </div>
